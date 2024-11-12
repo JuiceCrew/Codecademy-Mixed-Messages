@@ -57,9 +57,9 @@ const randomSentenceGenerator = () => {
     return arr[randomNumber];
   }
 
-  randomSentence.push(randomWord(group1));
-  randomSentence.push(randomWord(subject1));
+  randomSentence.push(randomWord(group1), randomWord(subject1));
 
+  //50% chance to add more subjects to sentence
   let i = fiftyFifty;
   let j = 0;
   while (i % 2 == 0 && j < 2) {
@@ -68,8 +68,13 @@ const randomSentenceGenerator = () => {
     j++;
   }
 
-  
-  console.log(randomSentence);
+  randomSentence.push(randomWord(adverbs), randomWord(verbs), randomWord(numbers), randomWord(adjectives),
+  randomWord(group2), randomWord(subject2));
+
+  const finalRandomSentence = randomSentence.join(" ") + "."
+
+  return finalRandomSentence;
+
 
 }
 
