@@ -53,7 +53,7 @@ const randomSentenceGenerator = () => {
   let fiftyFifty = Math.floor(Math.random() * 2);
 
   //random word selector
-  let randomWord = (arr) => {
+  const randomWord = (arr) => {
     return arr[randomNumber];
   }
 
@@ -61,9 +61,14 @@ const randomSentenceGenerator = () => {
   randomSentence.push(randomWord(subject1));
 
   let i = fiftyFifty;
-  /*while (i % 2 == 0) {
-    randomSentence.push("and", randomWord(subject1));
-  }*/
+  let j = 0;
+  while (i % 2 == 0 && j < 2) {
+    randomSentence.push("and", `${subject1[Math.floor(Math.random() * 30)]}`);
+    i = Math.floor(Math.random() * 2);
+    j++;
+  }
+
+  
   console.log(randomSentence);
 
 }
