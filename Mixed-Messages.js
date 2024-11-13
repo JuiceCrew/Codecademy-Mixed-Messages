@@ -48,9 +48,8 @@ const randomSentenceGenerator = () => {
   //establish the array to hold the random sentence and its first value of "The"
   const randomSentence = ["The"];
 
-  //creates a random number generators to be used later 
+  //creates a random number generator to be used later 
   let randomNumber = Math.floor(Math.random() * 30);
-  let fiftyFifty = Math.floor(Math.random() * 2);
 
   //random word selector
   const randomWord = (arr) => {
@@ -60,7 +59,7 @@ const randomSentenceGenerator = () => {
   randomSentence.push(randomWord(group1), randomWord(subject1));
 
   //50% chance to add more subjects to sentence
-  let i = fiftyFifty;
+  let i = Math.floor(Math.random() * 2);
   let j = 0;
   while (i % 2 == 0 && j < 2) {
     randomSentence.push("and", `${subject1[Math.floor(Math.random() * 30)]}`);
